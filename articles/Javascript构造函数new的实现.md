@@ -74,3 +74,4 @@ console.log(person1.sayName(), person2.sayName()); // 'My name is xiaoming', 'My
 
 ```
 
+=。= ojbk，实现了我们的 new 构造函数，完成（chao xi）了自己的第一篇文章，好像也没想象中那么难。
