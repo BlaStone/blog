@@ -19,7 +19,7 @@ function Foo () {}
 
 由此可见，new 构造函数需要返回对象（此处用1，2来表示，对象1表示显式返回的对象，对象2表示新创建的对象），若构造函数显式返回一个对象1，则返回的即是对象1，若未显式返回对象，则默认返回新创建的对象2；
 
-根据原型和原型链的知识，我们知道实例的 __proto__ 属性指向构造函数的 prototype 属性，因此实例得以访问得到构造函数原型（prototype）的属性，且我们需要在 new 构造函数内调用指定的构造函数，即 new 运算符后面的构造函数，将 this 绑定到新建的对象2上。
+根据原型和原型链的知识，我们知道实例的__proto__属性指向构造函数的 prototype 属性，因此实例得以访问得到构造函数原型（prototype）的属性，且我们需要在 new 构造函数内调用指定的构造函数，即 new 运算符后面的构造函数，将 this 绑定到新建的对象2上。
 
 下面我们来开始吧：
 
@@ -33,7 +33,7 @@ function objectFactory () {
   // 获取参数中我们传入的构造函数，此处 shift 函数会改变 arguments
   var Constructor = Array.prototype.shift.call(arguments);
   
-  // 将新建对象2的 __proto__ 属性指向传入的构造函数的原型
+  // 将新建对象2的__proto__属性指向传入的构造函数的原型
   obj.__proto__ = Constructor.prototype;
   
   // 用 apply 调用构造函数，改变传入的构造函数的 this 指向，使得 新建对象2 --> obj 可以访问构造函数的属性

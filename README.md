@@ -12,4 +12,5 @@ cd code/xxxx/
 #### | 前端基础知识
 
 * [JavaScript构造函数new的实现](https://github.com/BlaStone/blog/issues/1)
+* [JavaScript浅拷贝与深拷贝](https://github.com/BlaStone/blog/issues/2)
 

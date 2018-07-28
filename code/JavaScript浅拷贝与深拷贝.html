@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// JavaScript浅拷贝与深拷贝
+
+
+function shallowCopy (obj) {
+  var ret;
+  
+  // 若不是 object 类型直接返回，且如果 obj 是 null 的话直接返回
+  if (typeof obj !== 'object' || obj === null) {
+    return ret = obj;
+  }
+  
+  // 判断是数组还是对象
+  ret = obj instanceof Array ? [] : {};
+  
+  for (var i in obj) {
+    
+    // 只循环自身属性，不包含原型链上的属性
+    if (obj.hasOwnProperty(i)) {
+      ret[i] = obj[i];
+    }
+  }
+  
+  return ret;
+}
+
+function deepCopy (obj) {
+  var ret;
+  
+  if (typeof obj !== 'object' || obj === null) {
+    return ret = obj;
+  }
+  
+  ret = obj instanceof Array ? [] : {};
+  
+  for (var i in obj) {
+    
+    // 只循环自身属性，不包含原型链上的属性
+    if (obj.hasOwnProperty(i)) {
+      
+      // 若子对象为引用类型则递归调用自身
+      ret[i] = typeof obj[i] === 'object' ? arguments.callee(obj[i]) : obj[i];
+    }
+  }
+  
+  return ret;
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>
